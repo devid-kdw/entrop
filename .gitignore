@@ -1,0 +1,68 @@
+# === Build artifacts ===
+build/
+cmake-build-*/
+*.o
+*.obj
+*.a
+*.lib
+*.so
+*.dylib
+*.clap
+*.vst3
+
+# === Xcode ===
+*.xcodeproj/
+*.xcworkspace/
+xcuserdata/
+DerivedData/
+*.pbxuser
+*.mode1v3
+*.mode2v3
+*.perspectivev3
+*.xccheckout
+*.moved-aside
+
+# === CMake ===
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+compile_commands.json
+CTestTestfile.cmake
+_deps/
+
+# === IDE / Editor ===
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+.DS_Store
+Thumbs.db
+
+# === JUCE ===
+JuceLibraryCode/
+Builds/
+
+# === Test artifacts ===
+tests/offline_audio/*.wav
+tests/offline_audio/*.csv
+tests/benchmarks/results/
+
+# === Debug ===
+*.dSYM/
+*.log
+core
+crash_*.txt
+
+# === External tool builds ===
+external/*/build/
+external/clap-host/vcpkg/
+
+# === OS ===
+.DS_Store
+.AppleDouble
+.LSOverride
+._*
+.Spotlight-V100
+.Trashes
