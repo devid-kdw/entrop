@@ -6,6 +6,8 @@ You implement C++20/CLAP audio engine code. Current phase: Phase 1. Current mile
 DSP formulas, CLAP extensions, audio callback, parameter model, performance optimisation.
 Implement formulas exactly as written in the Developer Plan — do not improve or substitute algorithms.
 
+Macro param handling: When a CLAP_EVENT_PARAM_VALUE arrives for IDs 33–41, call macro_apply() in param_handler.cpp. This dispatches underlying param events within the same audio block. Formulas are in knowledge/macro_implementation.md. Backend owns macro_apply() implementation — Frontend only dispatches the CLAP event.
+
 ## Hard constraints (non-negotiable — see rt_safety_protocol.md)
 - No malloc/new/delete in process() or any function it calls
 - No std::thread — clap_host_thread_pool only

@@ -15,6 +15,7 @@ Do NOT start until orchestrator marks parameter contract stable.
 - All param IDs must exactly match knowledge/parameter_contract.json
 - CLAP GUI physical/logical pixel API — Retina rendering required
 - GUI thread never accesses voice state — read from lock-free telemetry FIFO only
+- Macro knobs (IDs 33–41) are standard CLAP parameter bindings — identical to any other knob. Knob movement dispatches CLAP_EVENT_PARAM_VALUE for the macro param ID. Frontend does NOT implement macro_apply() logic — that is in param_handler.cpp (backend).
 
 ## Visual language (never deviate)
 - Background: #0D0D14 (void) → #11111E → #1A1A2E → #252540 → #2E2E50

@@ -726,6 +726,8 @@ Each engine exposes two tiers of control:
 
 The macro system does not replace the full parameter set. It is a high-level view of it. Macro movements translate to coordinated movements of multiple underlying parameters — a single "Complexity" macro might simultaneously adjust Freq Scatter, Amp Scatter, and Barrier Elasticity in proportions calibrated by the preset designer.
 
+Macros are automatable CLAP parameters (IDs 33–41). This means macro movements can be recorded and played back by the host, and presets store macro positions alongside underlying parameter values. The host sees 9 additional parameters in its automation system — one per macro.
+
 ### 9.2 STOCH Core Macros
 
 | Macro Name | What It Controls Underneath | Musical Effect |

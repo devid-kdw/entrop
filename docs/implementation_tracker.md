@@ -70,6 +70,7 @@
 ---
 
 ## Parameter Contract
-Version: 1.1 — last modified 2026-02-25
+Version: 1.2 — last modified 2026-02-26
 File: knowledge/parameter_contract.json
-Changes: [none]
+Changes:
+- v1.2 (2026-02-26): Added 9 macro parameters IDs 33–41 (MACRO engine), added macro_target field. Total: 42 params.

@@ -1,5 +1,5 @@
 {
-    "version": "1.1",
+    "version": "1.2",
     "parameters": [
         {
             "id": 0,
@@ -369,6 +369,114 @@
             "type": "float",
             "taper": "logarithmic",
             "mpe": null
+        },
+        {
+            "id": 33,
+            "engine": "MACRO",
+            "name": "STOCH Stability",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.20,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 34,
+            "engine": "MACRO",
+            "name": "STOCH Tonality",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.0,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 35,
+            "engine": "MACRO",
+            "name": "STOCH Density",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.30,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 36,
+            "engine": "MACRO",
+            "name": "DIFFU Phase",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.70,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 37,
+            "engine": "MACRO",
+            "name": "DIFFU Tempo",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.40,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 38,
+            "engine": "MACRO",
+            "name": "DIFFU Complexity",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.50,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 39,
+            "engine": "MACRO",
+            "name": "BUBBLE Material",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.45,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 40,
+            "engine": "MACRO",
+            "name": "BUBBLE Population",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.30,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
+        },
+        {
+            "id": 41,
+            "engine": "MACRO",
+            "name": "BUBBLE Depth",
+            "min": 0.0,
+            "max": 1.0,
+            "default": 0.15,
+            "type": "float",
+            "taper": "linear",
+            "mpe": null,
+            "macro_target": true
         }
     ]
 }

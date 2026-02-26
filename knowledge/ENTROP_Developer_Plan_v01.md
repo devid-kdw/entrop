@@ -530,11 +530,26 @@ float eca_row_to_float(const uint8_t *row, int width) {
 
 ### 6.3 Macro Control System
 
-Macro controls are GUI-layer widgets only — they have no CLAP parameter IDs and are not automatable by the host. Each macro translates user movement into proportional simultaneous changes across multiple underlying parameters. Presets store underlying parameter values only; macro positions are derived from underlying params on load.
+Macro controls are CLAP parameters (IDs 33–41) that translate a single knob position into coordinated movements across multiple underlying parameters. They are automatable by the host, visible in automation lanes, and can be modulated.
 
-**Architecture:** Each engine exposes three macro knobs in the Primary Controls zone. Macro knob movement calls a macro_apply() function that computes delta values for each underlying param and dispatches them as if the user moved each param individually.
+**Parameter IDs:**
+- ID 33: STOCH Stability · ID 34: STOCH Tonality · ID 35: STOCH Density
+- ID 36: DIFFU Phase · ID 37: DIFFU Tempo · ID 38: DIFFU Complexity
+- ID 39: BUBBLE Material · ID 40: BUBBLE Population · ID 41: BUBBLE Depth
 
-**Macro definitions are specified in Musicality Spec Section 9.** Backend does not implement macro logic — this is handled by the Frontend agent.
+**Architecture:** When the host dispatches a CLAP_EVENT_PARAM_VALUE event for a macro parameter (ID 33–41), param_handler.cpp calls macro_apply(macro_id, value) which computes and dispatches new values for all underlying parameters as additional CLAP parameter events within the same audio block. Macro params are processed at the top of process() before underlying params — this ensures macro changes take effect in the correct order.
+
+**Processing order in process():**
+1. Consume all macro param events (IDs 33–41) → dispatch underlying param events
+2. Consume all underlying param events (IDs 0–32) → apply to voice state
+
+**Backend implements:** macro_apply() logic in param_handler.cpp. Exact formulas per macro are defined in knowledge/macro_implementation.md.
+
+**Frontend implements:** Macro knob visual display only. Macro knob movement dispatches a standard CLAP parameter change event for the macro param ID — identical to any other knob.
+
+**Preset storage:** Presets store macro param values (IDs 33–41) alongside underlying params. On preset load, macro positions are loaded directly — no derivation needed. If a preset was created before the macro system (or by direct param editing), macro positions are derived from underlying params using the inversion formulas in knowledge/macro_implementation.md.
+
+**Macro definitions are specified in Musicality Spec Section 9 and knowledge/macro_implementation.md.**
 
 ---
 

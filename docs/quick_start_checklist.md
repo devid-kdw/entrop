@@ -27,11 +27,11 @@ Redoslijed koraka za podizanje razvojnog okruženja od nule.
 
 ## Day 1 — Git Init
 
-- [ ] `git init` u `entrop-clap/`
-- [ ] `git add . && git commit -m "Day 0: project scaffolding"`
-- [ ] Dodati CLAP SDK kao submodule: `git submodule add https://github.com/free-audio/clap.git external/clap`
-- [ ] Dodati clap-helpers: `git submodule add https://github.com/free-audio/clap-helpers.git external/clap-helpers`
-- [ ] Push na GitHub
+- [x] `git init` u `entrop-clap/`
+- [x] `git add . && git commit -m "Day 0: project scaffolding"`
+- [x] Dodati CLAP SDK kao submodule: `git submodule add https://github.com/free-audio/clap.git external/clap`
+- [x] Dodati clap-helpers: `git submodule add https://github.com/free-audio/clap-helpers.git external/clap-helpers`
+- [x] Push na GitHub
 
 ## Day 2+ — Phase 1 W1-2: CLAP Boilerplate
 

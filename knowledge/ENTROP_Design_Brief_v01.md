@@ -369,7 +369,7 @@ Macro knobs (Tier 1 — three per engine column) are visually distinct from para
 - **Background disc:** Level 2 (`#1A1A2E`) instead of Level 3 — sits slightly recessed to suggest "layer above"
 - **Tooltip:** Shows which underlying parameters are being moved (e.g., "STABILITY → Amp Scatter + Freq Scatter")
 
-Macro knobs do not have a default tick mark — they have no fixed default position because their position is derived from the current state of underlying parameters.
+Macro knobs have a subtle default tick mark at their init patch position (defined in parameter_contract.json defaults for IDs 33–41). Position is saved in presets and restored on load.
 - **Modulation range overlay:** When a parameter has active LFO or MPE modulation assigned, a second arc appears on the knob at 30% opacity, in the engine accent color, showing the full modulated range as a dotted arc. This arc is always visible (not only on hover) when modulation is active. Implemented by Frontend from modulation depth data in the lock-free telemetry FIFO.
 
 ### 6.2 The F/k XY Pad (DIFFU Engine Only)
